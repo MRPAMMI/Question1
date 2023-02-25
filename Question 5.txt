@@ -1,0 +1,30 @@
+A contract the uses an enum to represent different states of a machine and allows the state to be changed
+
+pragma solidity ^0.8.0;
+
+contract StateMachine {
+    
+    enum State { Idle, Running, Stopped }
+    
+    State public currentState;
+    
+    constructor() {
+        currentState = State.Idle;
+    }
+    
+    function start() public {
+        require(currentState == State.Idle, "Machine must be idle to start.");
+        currentState = State.Running;
+    }
+    
+    function stop() public {
+        require(currentState == State.Running, "Machine must be running to stop.");
+        currentState = State.Stopped;
+    }
+    
+    function restart() public {
+        require(currentState == State.Stopped, "Machine must be stopped to restart.");
+        currentState = State.Idle;
+    }
+    
+}

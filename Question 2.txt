@@ -1,0 +1,13 @@
+A contract the stores an array of strings and allows new strings to be added
+
+pragma solidity ^0.8.0;
+
+contract StringArray {
+    
+    string[] public stringArray;
+    
+    function addString(string memory newString) public {
+        stringArray.push(newString);
+    }
+    
+}

@@ -1,0 +1,19 @@
+A contract the uses a struct to represent a person and allows new people to be added
+
+pragma solidity ^0.8.0;
+
+contract PersonRegistry {
+    
+    struct Person {
+        string name;
+        uint256 age;
+    }
+    
+    Person[] public people;
+    
+    function addPerson(string memory name, uint256 age) public {
+        Person memory newPerson = Person(name, age);
+        people.push(newPerson);
+    }
+    
+}

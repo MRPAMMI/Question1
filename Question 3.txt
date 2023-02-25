@@ -1,0 +1,13 @@
+A contract that store a mapping of addresses to integers and allows the integers to be updated
+
+pragma solidity ^0.8.0;
+
+contract AddressIntegerMapping {
+    
+    mapping(address => uint256) public addressIntegerMap;
+    
+    function updateInteger(address addr, uint256 newInteger) public {
+        addressIntegerMap[addr] = newInteger;
+    }
+    
+}

@@ -1,0 +1,13 @@
+A contract that stores an integer variable and allows it to be incremented
+
+pragma solidity ^0.8.0;
+
+contract IntegerIncrementer {
+    
+    uint256 public myInteger;
+    
+    function increment() public {
+        myInteger++;
+    }
+    
+}
